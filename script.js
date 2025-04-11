@@ -40,7 +40,7 @@ const quizData = [
     {
         question: "What is my best achievement so far?",
         options: ["Getting accepted into one of the top Grammar Schools", "Maintaining a streak of full marks in Arithmetic (12 times in a row)", "My own smartness", "Finally learning how to take a free kick in football."],
-        answer: "Getting accepted into... Grammar Schools",
+        answer: "Getting accepted into one of the top Grammar Schools",
     },
     {
         question: "What is my favourite football team?",
@@ -119,7 +119,7 @@ function displayQuestion() {
 
 function checkAnswer() {
     const selectedOption = document.querySelector('input[name = "quiz"]:checked');
-    if(selectedOption == true) {
+    if(selectedOption) {
         const answer = selectedOption.value;
         if(answer === quizData[currentQuestion].answer) {
             score++;
