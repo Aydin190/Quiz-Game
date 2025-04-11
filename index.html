@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: How much do you know about Aydin?</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- External CSS (styles.css) -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <!-- Internal CSS -->
+    <style>
+        body.dark-mode{
+            background: #1f2b3e;
+            color: #e9feff;
+        }
+
+
+
+        body.light-mode{
+            background: #e9feff;
+            color: #1f2b3e;
+        }
+
+
+
+
+        .container{
+            width: 450px;
+            padding: 20px;
+            margin-top: 80px;
+            border-radius: 20px;
+            transition: background 0.3s, color 0.3s ;
+        }
+
+
+
+        .container.dark-mode{
+            background: #1f2b3e;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+
+
+
+        .container.light-mode{
+            background: #fff;
+            color: #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+        .button{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #428bca;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-right: 10px;
+        }
+
+
+
+
+        .button.dark-mode{
+            background-color: #666;
+            color: #fff;
+        }
+
+
+
+        .button.dark-mode:hover{
+            background-color: #444;
+        }
+
+
+
+    </style>
+
+
+
+
+
+<body class="light-mode">
+    
+
+    <div class="container light-mode">
+        <button id="darkModeToggle" class="button">
+            <span id="darkModeIcon">🌙</span> Switch to Dark Mode
+        </button>
+        <!-- Inline CSS -->
+        <h1 style="margin-bottom: 2px;">Quiz App: How much do you know about Aydin?</h1>
+        <h4 style="margin-top: 0px;">10 Questions</h4>
+
+        <div id="quiz"></div>
+
+        <div id="result" class="result"></div>
+
+        <button class="button" id="submit">Submit</button>
+        <button id="retry" class="button hide">Retry</button>
+        <button id="showAnswer" class="button hide">Show Answer</button>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+    <script>
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        const darkModeIcon = document.getElementById("darkModeIcon");
+        const container = document.querySelector(".container");
+        
+        darkModeToggle.addEventListener("click", ()=> {
+            document.body.classList.toggle("dark-mode");
+            document.body.classList.toggle("light-mode");
+            container.classList.toggle("dark-mode");
+            container.classList.toggle("light-mode");
+            darkModeToggle.classList.toggle("dark-mode");
+            if(document.body.classList.contains("dark-mode")) {
+                darkModeIcon.textContent = "🌞";
+                darkModeToggle.innerHTML= "<span id='darkModeIcon'>🌞</span> Switch to Light Mode";
+
+                
+            }else{
+                darkModeIcon.textContent = "🌙";
+                darkModeToggle.innerHTML= "<span id='darkModeIcon'>🌙</span> Switch to Dark Mode";
+                
+            }
+
+            
+        });
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
